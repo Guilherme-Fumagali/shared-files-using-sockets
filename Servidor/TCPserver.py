@@ -5,16 +5,19 @@ Socket servidor
 from socket import *
 import os
 
+serverName = 'localhost'
+serverPort = 12000
+
 #Função que realiza os procedimentos iniciais para instanciar um Socket TCP na porta desejada
-def inicializar_servidor(serverPort):
+def inicializar_servidor(name, port):
     #AF_INET = Endereços ipv4
     #SOCK_STREAM = Socket com protocolo TCP
     serverSocket = socket(AF_INET,SOCK_STREAM)
-    serverSocket.bind(('localhost',serverPort)) 
+    serverSocket.bind((name, port)) 
     serverSocket.listen()
     return serverSocket
     
-serverSocket = inicializar_servidor(12000)
+serverSocket = inicializar_servidor(serverName, serverPort)
 
 print ("O servidor está pronto")
 

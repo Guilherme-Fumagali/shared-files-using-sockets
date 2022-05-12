@@ -70,3 +70,4 @@ while 1:
     
     #encerra conexão
     clientSocket.close()
+    print()
